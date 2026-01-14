@@ -93,9 +93,34 @@
     // TODO 1
     // Given an array of possible answers, a correct answer value, and a number of choices to get,
     // return a list of that many choices, including the correct answer and others from the array
-    function getMultipleChoices(n, correctAnswer, array) {
+    function getMultipleChoices(n, correctAnswer, possibleChoices) {
         // Use a while loop and the getRandomElement() function
         // Make sure there are no duplicates in the array
+
+        // 1. make an empty choices array
+        const choices = [];
+
+        // 2. let's get that correct answer in there
+        choices.push(correctAnswer);
+
+        // 3. a while loop that stops when length gets to 'n'
+        while (choices.length < n) {
+
+            // 4. create a variable that is a canditate element to go in our choices array,
+            //    using the getRandomElement that's been provided to us already
+            let candidate = getRandomElement(possibleChoices);
+
+            // 5. use an if conditional that says...
+            //    if the candidate element is NOT already in teh array...
+            if (!choices.includes(candidate)) {
+                // ...push it in
+                choices.push(candidate);
+            }
+        }
+
+        // 6. return the array shuffled, using the shuffleArray function they provided
+        //    otherwise the correct answer will always be at the start
+        return shuffleArray(choices);
 
     }
 
