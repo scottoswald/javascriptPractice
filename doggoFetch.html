@@ -128,10 +128,20 @@
     // TODO 2
     // Given a URL such as "https://images.dog.ceo/breeds/poodle-standard/n02113799_2280.jpg"
     // return the breed name string as formatted in the breed list, e.g. "standard poodle"
+    
     function getBreedFromURL(url) {
         // The string method .split(char) may come in handy
         // Try to use destructuring as much as you can
-        
+
+        // make an array, splitting on '/', and grab index 4...
+        let unsplitBreed = url.split("/")[4];
+        // if it is 2 words seperated by a '-', let's name those two words with variables using destructuring...
+        let [breed, subbreed] = unsplitBreed.split("-");
+        // let's return it..
+        // if it's two words - the words are reversed, and it's now in string format
+        // if it's one word - teh breed is returned in string format
+        // and we trim, as the undefined 'subbreed' comes back as a one space empty string " "
+        return [subbreed, breed].join(" ").trim();
     }
 
 
