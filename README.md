@@ -9,4 +9,4 @@ I'm really pleased I took this course. Ate a lot of humble pie, as there were fu
 
 ## Next Steps:
 
-I am now loving onto a TypeScript course.
+I am now moving onto a TypeScript course.
